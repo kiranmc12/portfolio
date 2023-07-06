@@ -5,7 +5,13 @@ function validateForm() {
 
     document.getElementById("one").innerHTML = "Name must be filled out";
     return false; 
-  } else {
+  }
+  else if (x.length < 3 || x.length > 30) {
+    document.getElementById("one").innerHTML = "Name must be between 3 and 30 characters";
+    return false;
+  }
+  
+   else {
     document.getElementById("one").innerHTML = ""; 
   }
   
@@ -28,7 +34,14 @@ function validateForm() {
 
     document.getElementById("three").innerHTML = "Subject must be filled out";
     return false; 
-  } else {
+  }   else if (s.length < 10) {
+    document.getElementById("three").innerHTML = "Subject is too short";
+    return false;
+  }
+
+
+
+  else {
     document.getElementById("three").innerHTML = ""; 
   }
 
@@ -56,13 +69,14 @@ function validateForm() {
   document.getElementById("phn_msg").innerHTML = "Number must be filled out";
   return false; 
 } 
+else if (!/^\d+$/.test(p)) {
+  document.getElementById("phn_msg").innerHTML = "Phone number must contain only numeric characters";
+  return false;
+}
  else  if (p.length !== 10) { 
 document.getElementById("phn_msg").innerHTML = "Phone number must be 10 digits";
 return false; 
 }
-
-
-
 
 else {
   document.getElementById("phn_msg").innerHTML = ""; 
